@@ -1,0 +1,98 @@
+CTA EMPIRE — PANDUAN FAIL WEBSITE
+================================
+
+1. MEMBUKA WEBSITE
+
+   Buka dist/index.html dalam pelayar. Semua halaman menggunakan HTML,
+   CSS dan JavaScript biasa. Sambungan internet diperlukan untuk fon
+   Google, peta, Google Maps, Waze dan WhatsApp.
+
+   Untuk pratonton melalui pelayan tempatan, jalankan dari folder ini:
+   python -m http.server 4173 --directory dist
+
+   Kemudian buka http://localhost:4173
+
+
+2. SUSUNAN FAIL
+
+   dist/index.html           Halaman utama
+   dist/tentang.html         Profil, pemilik, organisasi dan sijil
+   dist/it.html              Tiga perkhidmatan laman web
+   dist/construction.html    Empat perkhidmatan penyelenggaraan
+   dist/projek.html          Projek Pakej IP B21
+   dist/hubungi.html         Hubungan, borang pertanyaan dan peta
+
+   dist/css/style.css        Tema, navigasi, halaman utama dan animasi
+   dist/css/halaman.css      Gaya halaman dalaman dan borang
+   dist/js/script.js         Menu, transisi logo, skrol dan tab
+   dist/js/interaksi.js      Cadangan servis, WhatsApp dan galeri sijil
+   dist/assets/images/       Logo asal dan visual daripada profil
+   dist/assets/sijil/         Enam pratonton sijil berwatermark
+
+   Komen dalam Bahasa Melayu menerangkan fungsi setiap bahagian.
+   Tiada framework atau langkah kompilasi diperlukan.
+
+
+3. MEMASUKKAN FOTO PASUKAN
+
+   Simpan gambar sebenar dalam dist/assets/images/.
+   Buka tentang.html dan cari komen "Gantikan elemen ini".
+   Gantikan elemen ruang-foto dengan img seperti contoh dalam komen.
+   Nama fail yang dicadangkan:
+
+   pemilik.jpg               Nor Azila Binti Aznam
+   nik-muhammad-suhail.jpg    Nik Muhammad Suhail Bin Nik Othman
+   firdaus-sim.jpg            Firdaus Sim Chong Fei
+
+   Ruang foto yang tersedia bukan gambar individu sebenar.
+
+
+4. HUBUNGAN DAN BORANG
+
+   WhatsApp: 012-9595515 / 60129595515
+   E-mel: ctaempire1@outlook.com
+   Telefon pejabat: 05-831 0231 (seperti profil syarikat)
+   Alamat: No. 62A, Jalan Meru Impian A1,
+           Pusat Perniagaan Meru Impian, 30020 Ipoh, Perak.
+
+   Borang menyediakan mesej untuk disemak. Pengguna kemudian membuka
+   WhatsApp dan menghantar mesej sendiri. Tiada mesej automatik dihantar,
+   tiada pangkalan data dan tiada penghantaran e-mel automatik.
+
+   Peta serta pautan navigasi menggunakan carian alamat yang disahkan.
+   Koordinat tepat boleh ditambah kemudian jika pin rasmi diberikan.
+
+
+5. SIJIL DAN HAK CIPTA
+
+   Sijil mempunyai watermark CTA EMPIRE pada sudut 45 darjah yang
+   dilekatkan terus pada imej. Nombor pengenalan, nombor cukai peribadi,
+   QR yang berpotensi mendedahkan maklumat dan ID pengguna disamarkan.
+
+   PDF asal, penyata bank dan surat perjanjian tidak termasuk dalam
+   folder website atau pakej penghantaran.
+
+   Klik kanan, seretan imej dan tindakan simpan biasa dihadkan pada
+   pemapar sijil. Website tidak boleh menjamin sekatan screenshot
+   peranti atau menghalang pengguna teknikal memperoleh imej pratonton.
+   Watermark dan penyamaran data kekal pada imej yang dipaparkan.
+
+
+6. MAKLUMAT SUMBER
+
+   Kandungan syarikat dan rekod projek berdasarkan Profil Syarikat
+   CTA EMPIRE 2026. Maklumat hubungan, servis IT dan nama intern telah
+   disahkan pengguna. Foto seni bina ialah visual korporat daripada
+   profil, bukan foto projek yang didakwa telah dibina oleh CTA EMPIRE.
+
+   API pautan navigasi:
+   https://developers.google.com/maps/documentation/urls/get-started
+   https://developers.google.com/waze/deeplinks/
+
+
+7. PENYELENGGARAAN
+
+   Semak semula sijil yang mempunyai tarikh luput sebelum memperbaharui
+   kandungan. Kemas kini butiran hubungan pada semua halaman berkaitan.
+   Kekalkan folder assets, css dan js bersama fail HTML ketika memindahkan
+   website ke penyedia hosting lain.

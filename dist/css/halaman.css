@@ -1,0 +1,1178 @@
+/* =====================================================================
+   CTA EMPIRE — HALAMAN DALAMAN
+   Fail ini mengurus halaman Tentang, IT, Construction, Projek dan Hubungi.
+
+   01. Tajuk halaman dan komponen umum
+   02. Profil pemilik dan carta organisasi
+   03. Galeri serta pemapar sijil
+   04. Servis, proses dan soalan lazim
+   05. Rekod projek
+   06. Borang hubungan dan peta
+   07. Penyesuaian tablet dan telefon
+   ===================================================================== */
+
+/* 01. TAJUK HALAMAN DAN KOMPONEN UMUM
+   --------------------------------------------------------------------- */
+
+.hero-dalaman {
+    position: relative;
+    padding-block: 35px 85px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--garis);
+    background: radial-gradient(ellipse at 95% 100%, #182c43, transparent 60%);
+}
+
+.hero-dalaman::after {
+    position: absolute;
+    inset: 0 7% 0 auto;
+    width: 26%;
+    border-inline: 1px solid var(--garis);
+    opacity: 0.45;
+    pointer-events: none;
+    content: "";
+}
+
+.jejak-halaman {
+    display: inline-block;
+    margin-bottom: 52px;
+    color: var(--kelabu);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+}
+
+.hero-dalaman h1 {
+    position: relative;
+    z-index: 1;
+    margin-block: 24px 30px;
+    font-size: clamp(3.8rem, 6.8vw, 6.8rem);
+    line-height: 0.99;
+    letter-spacing: -0.035em;
+    animation: masuk-tajuk 0.9s ease both;
+}
+
+.penerangan-hero {
+    position: relative;
+    z-index: 1;
+    max-width: 640px;
+    margin-bottom: 0;
+    font-size: 1.0625rem;
+}
+
+.latar-dalam {
+    border-block: 1px solid var(--garis);
+    background: var(--navy-dalam);
+}
+
+.sr-sahaja {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.fakta-syarikat {
+    margin-top: 32px;
+}
+
+.fakta-syarikat > div {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 22px;
+    padding-block: 17px;
+    border-bottom: 1px solid var(--garis);
+    font-size: 0.9375rem;
+}
+
+.fakta-syarikat dt {
+    color: var(--kelabu);
+}
+
+.fakta-syarikat dd {
+    margin: 0;
+}
+
+/* 02. PROFIL PEMILIK DAN CARTA ORGANISASI
+   Ruangan foto disediakan; tiada foto individu direka atau dijana.
+   --------------------------------------------------------------------- */
+
+.cerita-syarikat,
+.profil-pemilik {
+    display: grid;
+    grid-template-columns: 1fr 1.25fr;
+    align-items: center;
+    gap: 90px;
+}
+
+.foto-cerita {
+    position: relative;
+    margin: 0;
+}
+
+.foto-cerita img {
+    width: 100%;
+    height: 610px;
+    object-fit: cover;
+    filter: saturate(0.45);
+}
+
+.foto-cerita figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px;
+    color: var(--putih);
+    background: linear-gradient(transparent, rgba(7, 16, 28, 0.85));
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+}
+
+.ruang-foto {
+    position: relative;
+    display: flex;
+    min-width: 0;
+    min-height: 210px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--garis);
+    background: linear-gradient(140deg, #20344b, #0b1625);
+}
+
+.ruang-foto::before,
+.ruang-foto::after {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border: 1px solid var(--emas);
+    opacity: 0.5;
+    content: "";
+}
+
+.ruang-foto::before {
+    top: 20px;
+    left: 20px;
+    border-right: 0;
+    border-bottom: 0;
+}
+
+.ruang-foto::after {
+    right: 20px;
+    bottom: 20px;
+    border-top: 0;
+    border-left: 0;
+}
+
+.inisial-foto {
+    color: rgba(209, 173, 118, 0.75);
+    font-family: var(--fon-tajuk);
+    font-size: 5rem;
+    font-style: italic;
+    line-height: 1.1;
+}
+
+.label-foto {
+    position: absolute;
+    bottom: 28px;
+    color: var(--kelabu);
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+}
+
+.foto-pemilik {
+    min-height: 460px;
+}
+
+.foto-pemilik .inisial-foto {
+    font-size: 9rem;
+}
+
+.nama-pemilik {
+    font-size: clamp(2.5rem, 4.6vw, 4.8rem);
+}
+
+.carta-organisasi {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 22px;
+}
+
+.kad-ahli {
+    position: relative;
+    width: 100%;
+    max-width: 390px;
+    border: 1px solid var(--garis);
+    background: var(--navy-cerah);
+}
+
+.kad-ahli .ruang-foto {
+    border: 0;
+    border-bottom: 1px solid var(--garis);
+}
+
+.butiran-ahli {
+    padding: 27px 24px 30px;
+    text-align: center;
+}
+
+.butiran-ahli h3 {
+    margin: 15px 0 0;
+    font-family: var(--fon-isi);
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+}
+
+.cabang-organisasi {
+    position: relative;
+    display: grid;
+    width: min(100%, 900px);
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 60px;
+    padding-top: 80px;
+}
+
+.cabang-organisasi::before {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 40px;
+    background: var(--emas);
+    content: "";
+}
+
+.cabang-organisasi::after {
+    position: absolute;
+    top: 40px;
+    right: calc(25% - 15px);
+    left: calc(25% - 15px);
+    height: 1px;
+    background: var(--emas);
+    content: "";
+}
+
+.cabang-organisasi .kad-ahli::before {
+    position: absolute;
+    top: -41px;
+    left: 50%;
+    width: 1px;
+    height: 40px;
+    background: var(--emas);
+    content: "";
+}
+
+/* 03. GALERI DAN PEMAPAR SIJIL
+   Watermark telah dibakar pada imej; CSS hanya mengurus paparan.
+   --------------------------------------------------------------------- */
+
+.grid-sijil {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+}
+
+.kad-sijil {
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--garis);
+    background: var(--navy);
+    text-align: left;
+    transition: border-color 0.3s;
+}
+
+.kad-sijil:hover {
+    border-color: var(--emas);
+}
+
+.pratonton-sijil {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+    background: #e9e8e3;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.pratonton-sijil img {
+    width: 100%;
+    height: 100%;
+    padding: 18px;
+    object-fit: contain;
+    pointer-events: none;
+    transition: transform 0.5s;
+}
+
+.kad-sijil:hover img {
+    transform: scale(1.03);
+}
+
+.label-besar {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    padding: 7px 13px;
+    color: var(--putih);
+    background: var(--navy);
+    font-size: 0.875rem;
+}
+
+.butiran-sijil {
+    padding: 24px;
+}
+
+.butiran-sijil h3 {
+    margin: 13px 0;
+    font-size: 1.9rem;
+    line-height: 1.12;
+}
+
+.butiran-sijil p {
+    margin-bottom: 0;
+    font-size: 0.875rem;
+}
+
+.nota-sijil,
+.nota-peta {
+    margin-top: 27px;
+    font-size: 0.875rem;
+}
+
+.dialog-sijil {
+    width: min(1100px, 96vw);
+    max-width: 96vw;
+    height: 94dvh;
+    max-height: 94dvh;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--garis);
+    color: var(--putih);
+    background: var(--navy-dalam);
+}
+
+.dialog-sijil[open] {
+    display: flex;
+    flex-direction: column;
+}
+
+.dialog-sijil::backdrop {
+    background: rgba(3, 7, 14, 0.92);
+    backdrop-filter: blur(12px);
+}
+
+.bar-sijil {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 16px 24px;
+    border-bottom: 1px solid var(--garis);
+}
+
+.bar-sijil h2 {
+    margin: 0;
+    font-family: var(--fon-isi);
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 0;
+}
+
+.kawalan-sijil {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 10px 24px;
+}
+
+.kawalan-sijil button {
+    min-width: 42px;
+    min-height: 44px;
+    padding: 8px 12px;
+    border: 1px solid var(--garis);
+    background: var(--navy-cerah);
+    font-size: 0.875rem;
+}
+
+.kawalan-sijil button:hover {
+    border-color: var(--emas);
+}
+
+.kawalan-zum {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.kawalan-zum output {
+    min-width: 45px;
+    color: var(--emas);
+    font-size: 0.875rem;
+    text-align: center;
+}
+
+.ruang-sijil {
+    flex: 1;
+    min-height: 0;
+    overflow: auto;
+    overscroll-behavior: contain;
+    background: #172130;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.kanvas-sijil {
+    width: var(--zum-sijil, 100%);
+    min-width: 100%;
+    padding: 20px;
+}
+
+.kanvas-sijil img {
+    width: 100%;
+    max-width: 820px;
+    height: auto;
+    margin-inline: auto;
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
+
+.kanvas-sijil.dizum img {
+    max-width: none;
+}
+
+.nota-pemaparan {
+    flex-shrink: 0;
+    margin: 0;
+    padding: 10px 16px;
+    font-size: 0.75rem;
+    text-align: center;
+    letter-spacing: 0.06em;
+}
+
+/* 04. SERVIS, PROSES DAN SOALAN LAZIM
+   --------------------------------------------------------------------- */
+
+.grid-servis {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-top: 1px solid var(--garis);
+}
+
+.kad-servis {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 36px 32px;
+    border-right: 1px solid var(--garis);
+    border-bottom: 1px solid var(--garis);
+    transition: background 0.4s;
+}
+
+.kad-servis:first-child {
+    border-left: 1px solid var(--garis);
+}
+
+.kad-servis:hover {
+    background: var(--navy-cerah);
+}
+
+.kad-servis > .label-kecil {
+    font-size: 0.75rem;
+}
+
+.simbol-servis {
+    display: block;
+    margin-block: 27px;
+    color: var(--emas);
+    font-family: var(--fon-tajuk);
+    font-size: 3.5rem;
+    font-style: italic;
+    line-height: 1;
+}
+
+.kad-servis h3 {
+    font-size: 2.8rem;
+}
+
+.kad-servis > p {
+    flex: 1;
+}
+
+.kad-servis ul {
+    width: 100%;
+    margin: 10px 0 25px;
+    padding: 0;
+    list-style: none;
+}
+
+.kad-servis li {
+    padding-block: 10px;
+    border-top: 1px solid var(--garis);
+    font-size: 0.875rem;
+}
+
+.pemilih-website {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 90px;
+}
+
+.pilihan-matlamat {
+    display: grid;
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.pilihan-matlamat label {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 19px 22px;
+    border: 1px solid var(--garis);
+    cursor: pointer;
+}
+
+.pilihan-matlamat label:has(input:checked) {
+    border-color: var(--emas);
+    background: var(--navy-cerah);
+}
+
+.pilihan-matlamat input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--emas);
+}
+
+.hasil-cadangan {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid var(--garis);
+}
+
+.hasil-cadangan h3 {
+    margin-bottom: 17px;
+}
+
+.langkah-proses {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 35px;
+    margin: 60px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.langkah-proses li {
+    padding-top: 22px;
+    border-top: 1px solid var(--emas);
+}
+
+.langkah-proses li > span {
+    color: var(--emas);
+    font-size: 0.875rem;
+}
+
+.langkah-proses h3 {
+    margin-block: 22px 15px;
+    font-size: 2rem;
+}
+
+.langkah-proses p {
+    margin-bottom: 0;
+    font-size: 0.9375rem;
+}
+
+.seksyen-soalan {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 80px;
+    border-top: 1px solid var(--garis);
+}
+
+.senarai-soalan details {
+    border-bottom: 1px solid var(--garis);
+}
+
+.senarai-soalan summary,
+.nota-rekod summary {
+    padding-block: 23px;
+    cursor: pointer;
+}
+
+.senarai-soalan details p {
+    padding-right: 20px;
+}
+
+.jalur-kelayakan {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-block: 35px;
+    border-bottom: 1px solid var(--garis);
+}
+
+.jalur-kelayakan strong {
+    display: block;
+    margin-top: 8px;
+    font-family: var(--fon-tajuk);
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.baris-kerja {
+    display: grid;
+    grid-template-columns: 0.3fr 1.2fr 1.5fr;
+    align-items: start;
+    gap: 45px;
+    padding-block: 42px;
+    border-bottom: 1px solid var(--garis);
+}
+
+.baris-kerja .nombor {
+    padding-top: 8px;
+}
+
+.baris-kerja h3 {
+    margin-bottom: 0;
+}
+
+.kad-prinsip {
+    padding: 40px;
+    border: 1px solid var(--garis);
+    background: var(--navy-cerah);
+}
+
+.kad-prinsip ol {
+    margin: 30px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.kad-prinsip li {
+    padding-block: 22px;
+    border-top: 1px solid var(--garis);
+}
+
+.kad-prinsip li span {
+    margin-right: 18px;
+    color: var(--emas);
+    font-size: 0.875rem;
+}
+
+/* 05. REKOD PROJEK
+   --------------------------------------------------------------------- */
+
+.paparan-projek {
+    margin-block: 55px;
+    padding: 60px;
+    border: 1px solid var(--garis);
+    background: radial-gradient(ellipse at 100% 0%, #293949, var(--navy-dalam) 75%);
+}
+
+.angka-projek {
+    display: block;
+    margin-block: 24px;
+    color: var(--emas-cerah);
+    font-family: var(--fon-tajuk);
+    font-size: clamp(6rem, 16vw, 14rem);
+    line-height: 1;
+    letter-spacing: -0.05em;
+}
+
+.angka-projek small {
+    font-family: var(--fon-isi);
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+}
+
+.penanda-tempoh {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: var(--kelabu);
+    font-size: 0.875rem;
+    letter-spacing: 0.04em;
+}
+
+.butiran-projek {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 90px;
+}
+
+.nota-rekod {
+    margin-top: 45px;
+    border-block: 1px solid var(--garis);
+    font-size: 0.9375rem;
+}
+
+/* 06. BORANG HUBUNGAN DAN PETA
+   --------------------------------------------------------------------- */
+
+.susun-hubungi {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: start;
+    gap: 85px;
+}
+
+.butiran-hubungi {
+    padding-block: 23px;
+    border-bottom: 1px solid var(--garis);
+}
+
+.butiran-hubungi .label-kecil {
+    margin-bottom: 10px;
+}
+
+.butiran-hubungi a {
+    display: block;
+    width: fit-content;
+    overflow-wrap: anywhere;
+}
+
+.butiran-hubungi a:hover {
+    color: var(--emas);
+}
+
+.butiran-hubungi p {
+    margin-bottom: 0;
+}
+
+.nombor-hubungi {
+    font-family: var(--fon-tajuk);
+    font-size: 2.7rem;
+    line-height: 1.3;
+}
+
+.borang-hubungi {
+    padding: 40px;
+    border: 1px solid var(--garis);
+    background: var(--navy-cerah);
+}
+
+.borang-hubungi h3 {
+    margin-bottom: 20px;
+}
+
+.nota-borang {
+    margin-block: 18px 28px;
+    color: var(--kelabu);
+    font-size: 0.875rem;
+    line-height: 1.65;
+}
+
+.dua-medan {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.medan {
+    margin-bottom: 23px;
+}
+
+.medan label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.9375rem;
+}
+
+.medan label > span {
+    color: var(--emas);
+}
+
+.medan label > .pilihan {
+    margin-left: 5px;
+    color: var(--kelabu);
+    font-size: 0.8125rem;
+}
+
+.medan input,
+.medan select,
+.medan textarea {
+    width: 100%;
+    min-height: 52px;
+    padding: 13px 15px;
+    border: 1px solid #536073;
+    color: var(--putih);
+    background: var(--navy);
+    font-size: 1rem;
+}
+
+.medan textarea {
+    resize: vertical;
+}
+
+.medan input::placeholder,
+.medan textarea::placeholder {
+    color: #919caa;
+    opacity: 1;
+}
+
+.medan select {
+    color-scheme: dark;
+}
+
+.medan input:focus,
+.medan select:focus,
+.medan textarea:focus {
+    border-color: var(--emas);
+}
+
+.borang-hubungi > .butang {
+    width: 100%;
+}
+
+.semakan-mesej {
+    margin-top: 30px;
+    padding-top: 24px;
+    border-top: 1px solid var(--emas);
+}
+
+.semakan-mesej h4 {
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+#pratonton-mesej {
+    padding: 20px;
+    border-left: 2px solid var(--emas);
+    background: var(--navy);
+    font-size: 0.9375rem;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.bingkai-peta {
+    overflow: hidden;
+    border: 1px solid var(--garis);
+    background: var(--navy-cerah);
+}
+
+.bingkai-peta iframe {
+    display: block;
+    width: 100%;
+    height: 450px;
+    border: 0;
+}
+
+/* 07. PENYESUAIAN TABLET DAN TELEFON
+   --------------------------------------------------------------------- */
+
+@media (max-width: 1100px) {
+    .cerita-syarikat,
+    .profil-pemilik,
+    .pemilih-website,
+    .butiran-projek,
+    .susun-hubungi {
+        gap: 40px;
+    }
+
+    .grid-servis {
+        grid-template-columns: 1fr;
+    }
+
+    .kad-servis {
+        display: grid;
+        grid-template-columns: 1fr 1.3fr;
+        column-gap: 40px;
+        border-left: 1px solid var(--garis);
+    }
+
+    .kad-servis > .label-kecil,
+    .kad-servis > .simbol-servis,
+    .kad-servis > h3 {
+        grid-column: 1;
+    }
+
+    .kad-servis > p {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        padding-top: 15px;
+    }
+
+    .kad-servis ul,
+    .kad-servis > a {
+        grid-column: 2;
+    }
+
+    .kad-servis ul {
+        grid-row: 3;
+    }
+
+    .grid-sijil {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .langkah-proses {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .borang-hubungi {
+        padding: 27px;
+    }
+
+    .dua-medan {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .foto-cerita img {
+        height: 560px;
+    }
+}
+
+@media (max-width: 767px) {
+    .hero-dalaman {
+        padding-block: 28px 55px;
+    }
+
+    .jejak-halaman {
+        margin-bottom: 35px;
+    }
+
+    .hero-dalaman h1 {
+        font-size: clamp(3rem, 10vw, 4.4rem);
+        line-height: 1.04;
+        letter-spacing: -0.03em;
+    }
+
+    .hero-dalaman h1 br {
+        display: initial;
+    }
+
+    .penerangan-hero {
+        font-size: 1rem;
+    }
+
+    .cerita-syarikat,
+    .profil-pemilik,
+    .pemilih-website,
+    .seksyen-soalan,
+    .butiran-projek,
+    .susun-hubungi {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .foto-cerita img {
+        height: 350px;
+    }
+
+    .foto-pemilik {
+        min-height: 360px;
+    }
+
+    .nama-pemilik {
+        font-size: 2.8rem;
+    }
+
+    .fakta-syarikat > div {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .cabang-organisasi {
+        width: min(100%, 390px);
+        grid-template-columns: 1fr;
+        gap: 45px;
+        padding-top: 45px;
+    }
+
+    .cabang-organisasi::before,
+    .cabang-organisasi::after {
+        display: none;
+    }
+
+    .cabang-organisasi .kad-ahli::before {
+        top: -46px;
+        height: 45px;
+    }
+
+    .grid-sijil {
+        gap: 16px;
+    }
+
+    .pratonton-sijil {
+        height: 180px;
+    }
+
+    .pratonton-sijil img {
+        padding: 9px;
+    }
+
+    .butiran-sijil {
+        padding: 17px;
+    }
+
+    .butiran-sijil h3 {
+        font-size: 1.55rem;
+    }
+
+    .label-besar {
+        padding: 5px 8px;
+        font-size: 0.75rem;
+    }
+
+    .dialog-sijil {
+        width: 100vw;
+        max-width: 100vw;
+        height: 100dvh;
+        max-height: 100dvh;
+        margin: 0;
+        border: 0;
+    }
+
+    .bar-sijil {
+        padding: 15px;
+    }
+
+    .bar-sijil h2 {
+        font-size: 0.875rem;
+    }
+
+    .bar-sijil .butang-tutup {
+        flex-shrink: 0;
+    }
+
+    .kawalan-sijil {
+        justify-content: center;
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .kawalan-zum {
+        gap: 6px;
+    }
+
+    .kawalan-sijil button {
+        min-width: 40px;
+        padding-inline: 8px;
+        font-size: 0.8125rem;
+    }
+
+    .kanvas-sijil {
+        padding: 10px;
+    }
+
+    .kad-servis {
+        display: flex;
+        padding: 28px;
+    }
+
+    .kad-servis > p {
+        padding: 0;
+    }
+
+    .simbol-servis {
+        margin-block: 24px;
+    }
+
+    .langkah-proses {
+        gap: 35px 25px;
+        margin-top: 40px;
+    }
+
+    .langkah-proses h3 {
+        font-size: 1.85rem;
+    }
+
+    .jalur-kelayakan {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .jalur-kelayakan .label-kecil {
+        font-size: 0.75rem;
+    }
+
+    .jalur-kelayakan strong {
+        font-size: 1.7rem;
+    }
+
+    .baris-kerja {
+        grid-template-columns: 0.15fr 1fr;
+        gap: 20px;
+    }
+
+    .baris-kerja > div {
+        grid-column: 2;
+    }
+
+    .baris-kerja h3 br {
+        display: initial;
+    }
+
+    .kad-prinsip {
+        padding: 28px;
+    }
+
+    .paparan-projek {
+        margin-block: 35px;
+        padding: 30px 23px;
+    }
+
+    .angka-projek {
+        font-size: clamp(4.6rem, 20vw, 8rem);
+    }
+
+    .angka-projek small {
+        font-size: 0.875rem;
+    }
+
+    .penanda-tempoh {
+        font-size: 0.75rem;
+        letter-spacing: 0;
+    }
+
+    .borang-hubungi {
+        padding: 26px 22px;
+    }
+
+    .bingkai-peta iframe {
+        height: 350px;
+    }
+}
+
+@media (max-width: 390px) {
+    .grid-sijil {
+        grid-template-columns: 1fr;
+    }
+
+    .pratonton-sijil {
+        height: 260px;
+    }
+
+    .langkah-proses {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Hanya paparan dokumen dihadkan semasa cetakan. */
+@media print {
+    .grid-sijil,
+    .dialog-sijil,
+    .lapisan-transisi,
+    .bar-telefon {
+        display: none !important;
+    }
+}
