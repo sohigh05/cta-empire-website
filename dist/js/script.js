@@ -72,7 +72,8 @@ window.addEventListener("pageshow", function (event) {
 });
 
 function namaHalaman(url) {
-    const nama = url.pathname.replace(/\/$/, "").split("/").pop() || "index";
+    /* Alamat folder GitHub Pages berakhir dengan / dan merujuk halaman utama. */
+    const nama = url.pathname.split("/").pop() || "index";
     return nama.replace(/\.html$/, "");
 }
 

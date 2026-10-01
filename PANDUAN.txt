@@ -18,9 +18,12 @@ CTA EMPIRE — PANDUAN FAIL WEBSITE
    pautan bidang membuka halaman penuh sebagai paparan sandaran.
    Sambungan internet diperlukan untuk fon Google, peta dan WhatsApp.
 
-   Website dijalankan secara tempatan. Kod dan gambar turut disimpan
-   dalam repositori GitHub Public atas permintaan pengguna.
-   Hosting automatik dan pakej ZIP tidak diperlukan.
+   Website boleh dijalankan secara tempatan dan diterbitkan melalui
+   GitHub Pages atas permintaan pengguna. Kod dan gambar disimpan
+   dalam repositori GitHub Public. Pakej ZIP tidak diperlukan.
+
+   Penerbitan menggunakan .github/workflows/pages.yml. Perubahan
+   dalam folder dist yang dihantar ke branch main akan diterbitkan.
 
 
 2. SUSUNAN FAIL

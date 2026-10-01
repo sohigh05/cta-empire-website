@@ -45,6 +45,12 @@ dist/
 
 Rujuk **PANDUAN.txt** untuk maklumat penyelenggaraan. Tiada framework atau langkah kompilasi diperlukan.
 
-Repositori ini menyimpan kod sumber. GitHub Pages atau hosting automatik tidak dikonfigurasikan.
+## Penerbitan website
+
+Website awam: **https://sohigh05.github.io/cta-empire-website/**
+
+GitHub Pages menerbitkan folder `dist` melalui `.github/workflows/pages.yml`.
+Perubahan pada website yang dihantar ke branch `main` akan diterbitkan secara automatik.
+Website juga boleh terus digunakan melalui pelayan tempatan.
 
 © CTA EMPIRE. Hak cipta terpelihara.
