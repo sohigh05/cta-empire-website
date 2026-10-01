@@ -29,25 +29,25 @@ CTA EMPIRE — PANDUAN FAIL WEBSITE
    dist/js/script.js         Menu, loading, transisi logo dan skrol
    dist/js/interaksi.js      Cadangan servis, WhatsApp dan galeri sijil
    dist/js/aliran.js         Dua aliran dengan pop-up maklumat penuh
-   dist/assets/images/       Logo asal syarikat
+   dist/assets/images/       Logo asal dan foto sebenar pasukan
    dist/assets/sijil/         Enam pratonton sijil berwatermark
 
    Komen dalam Bahasa Melayu menerangkan fungsi setiap bahagian.
    Tiada framework atau langkah kompilasi diperlukan.
 
 
-3. MEMASUKKAN FOTO PASUKAN
+3. FOTO PASUKAN
 
-   Simpan gambar sebenar dalam dist/assets/images/.
-   Buka tentang.html dan cari komen "Gantikan elemen ini".
-   Gantikan elemen ruang-foto dengan img seperti contoh dalam komen.
-   Nama fail yang dicadangkan:
+   Foto sebenar yang diberikan telah dimasukkan pada profil pemilik
+   dan carta organisasi dalam tentang.html. Fail gambar:
 
    pemilik.jpg               Nor Azila Binti Aznam
-   nik-muhammad-suhail.jpg    Nik Muhammad Suhail Bin Nik Othman
+   nik-muhammad-suhail.png    Nik Muhammad Suhail Bin Nik Othman
    firdaus-sim.jpg            Firdaus Sim Chong Fei
 
-   Ruang foto yang tersedia bukan gambar individu sebenar.
+   Gambar Nor Azila digunakan pada profil pemilik dan carta organisasi.
+   Paparan mengekalkan seluruh potret tanpa memotong wajah.
+   Untuk mengganti foto, kemas kini fail dan saiz imej dalam tentang.html.
 
 
 4. HUBUNGAN DAN BORANG
