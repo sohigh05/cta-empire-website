@@ -4,21 +4,17 @@
         <!-- MAKLUMAT HALAMAN -->
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#0b1625" />
+        <meta name="theme-color" content="#123e75" />
         <meta
             name="description"
             content="Perkhidmatan penyelenggaraan jalan, landskap, pemotongan rumput dan pembersihan longkang di bawah CTA Construction."
         />
         <title>CTA Construction | CTA EMPIRE</title>
-        <link
-            rel="icon"
-            type="image/svg+xml"
-            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b1625'/%3E%3Cpath d='M17 18h34L28 48H16l19-21H17z' fill='%23c9a66e'/%3E%3C/svg%3E"
-        />
+        <link rel="icon" type="image/png" href="assets/images/cta-logo.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
             rel="stylesheet"
         />
         <link rel="stylesheet" href="css/style.css" />
@@ -79,14 +75,34 @@
         </dialog>
 
         <!-- LOADING DAN TRANSISI: logo asal menjadi penghubung antara halaman. -->
-        <div class="lapisan-transisi" id="lapisan-transisi" aria-hidden="true">
+        <div
+            class="lapisan-transisi"
+            id="lapisan-transisi"
+            role="status"
+            aria-live="polite"
+            aria-hidden="true"
+        >
             <div class="isi-transisi">
                 <img src="assets/images/cta-logo.png" alt="" width="180" height="180" />
                 <span class="label-kecil">CTA EMPIRE</span>
                 <span class="garis-loading"></span>
-                <span class="teks-loading">Setiap langkah, bermakna.</span>
+                <span class="teks-loading">Selamat datang ke CTA EMPIRE</span>
             </div>
         </div>
+
+        <!-- PAPARAN DUA ALIRAN: kandungan penuh diambil daripada halaman bidang. -->
+        <dialog class="dialog-aliran" id="dialog-aliran" aria-labelledby="tajuk-aliran">
+            <div class="bar-aliran">
+                <div>
+                    <span class="label-kecil">BIDANG PERKHIDMATAN</span>
+                    <h2 id="tajuk-aliran">CTA EMPIRE</h2>
+                </div>
+                <button type="button" class="tutup-aliran" aria-label="Tutup maklumat perkhidmatan">
+                    Tutup <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="kandungan-aliran" id="kandungan-aliran" tabindex="0"></div>
+        </dialog>
 
         <main id="kandungan">
             <!-- TAJUK HALAMAN -->
@@ -253,5 +269,6 @@
         <div class="kemajuan-bacaan" aria-hidden="true"></div>
         <script src="js/script.js" defer></script>
         <script src="js/interaksi.js" defer></script>
+        <script src="js/aliran.js" defer></script>
     </body>
 </html>

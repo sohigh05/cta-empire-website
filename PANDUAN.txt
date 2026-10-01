@@ -3,9 +3,11 @@ CTA EMPIRE — PANDUAN FAIL WEBSITE
 
 1. MEMBUKA WEBSITE
 
-   Buka dist/index.html dalam pelayar. Semua halaman menggunakan HTML,
-   CSS dan JavaScript biasa. Sambungan internet diperlukan untuk fon
-   Google, peta, Google Maps, Waze dan WhatsApp.
+   Semua halaman menggunakan HTML, CSS dan JavaScript biasa.
+   Gunakan pelayan tempatan atau hosting untuk mengaktifkan pop-up
+   IT dan Construction. Jika index.html dibuka terus sebagai fail,
+   pautan bidang membuka halaman penuh sebagai paparan sandaran.
+   Sambungan internet diperlukan untuk fon Google, peta dan WhatsApp.
 
    Untuk pratonton melalui pelayan tempatan, jalankan dari folder ini:
    python -m http.server 4173 --directory dist
@@ -24,9 +26,10 @@ CTA EMPIRE — PANDUAN FAIL WEBSITE
 
    dist/css/style.css        Tema, navigasi, halaman utama dan animasi
    dist/css/halaman.css      Gaya halaman dalaman dan borang
-   dist/js/script.js         Menu, transisi logo, skrol dan tab
+   dist/js/script.js         Menu, loading, transisi logo dan skrol
    dist/js/interaksi.js      Cadangan servis, WhatsApp dan galeri sijil
-   dist/assets/images/       Logo asal dan visual daripada profil
+   dist/js/aliran.js         Dua aliran dengan pop-up maklumat penuh
+   dist/assets/images/       Logo asal syarikat
    dist/assets/sijil/         Enam pratonton sijil berwatermark
 
    Komen dalam Bahasa Melayu menerangkan fungsi setiap bahagian.
@@ -82,8 +85,8 @@ CTA EMPIRE — PANDUAN FAIL WEBSITE
 
    Kandungan syarikat dan rekod projek berdasarkan Profil Syarikat
    CTA EMPIRE 2026. Maklumat hubungan, servis IT dan nama intern telah
-   disahkan pengguna. Foto seni bina ialah visual korporat daripada
-   profil, bukan foto projek yang didakwa telah dibina oleh CTA EMPIRE.
+   disahkan pengguna. Foto bangunan telah dikeluarkan daripada website.
+   Ilustrasi IT dan penyelenggaraan ialah elemen SVG dalam HTML.
 
    API pautan navigasi:
    https://developers.google.com/maps/documentation/urls/get-started
@@ -91,6 +94,14 @@ CTA EMPIRE — PANDUAN FAIL WEBSITE
 
 
 7. PENYELENGGARAAN
+
+   Warna biru, kuning keemasan dan latar cerah ditetapkan dalam :root
+   pada css/style.css. Maklumat pop-up dibaca daripada it.html dan
+   construction.html supaya kandungan hanya perlu disunting sekali.
+
+   Loading pembukaan dipaparkan selama 1.8 saat pada setiap pembukaan
+   biasa. Logo transisi dipaparkan selama 1.1 saat sebelum halaman atau
+   pop-up dibuka. Pilihan sistem untuk kurang gerakan turut dihormati.
 
    Semak semula sijil yang mempunyai tarikh luput sebelum memperbaharui
    kandungan. Kemas kini butiran hubungan pada semua halaman berkaitan.

@@ -4,21 +4,17 @@
         <!-- MAKLUMAT HALAMAN -->
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="theme-color" content="#0b1625" />
+        <meta name="theme-color" content="#123e75" />
         <meta
             name="description"
             content="CTA EMPIRE di Ipoh, Perak. Perkhidmatan website korporat, website tempahan, landing page dan penyelenggaraan jalan serta kawasan."
         />
-        <title>Dua Kepakaran. Satu Visi. | CTA EMPIRE</title>
-        <link
-            rel="icon"
-            type="image/svg+xml"
-            href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230b1625'/%3E%3Cpath d='M17 18h34L28 48H16l19-21H17z' fill='%23c9a66e'/%3E%3C/svg%3E"
-        />
+        <title>Dua Bidang. Satu Komitmen. | CTA EMPIRE</title>
+        <link rel="icon" type="image/png" href="assets/images/cta-logo.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@400;500;600;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap"
             rel="stylesheet"
         />
         <link rel="stylesheet" href="css/style.css" />
@@ -79,76 +75,193 @@
         </dialog>
 
         <!-- LOADING DAN TRANSISI: logo asal menjadi penghubung antara halaman. -->
-        <div class="lapisan-transisi" id="lapisan-transisi" aria-hidden="true">
+        <div
+            class="lapisan-transisi"
+            id="lapisan-transisi"
+            role="status"
+            aria-live="polite"
+            aria-hidden="true"
+        >
             <div class="isi-transisi">
                 <img src="assets/images/cta-logo.png" alt="" width="180" height="180" />
                 <span class="label-kecil">CTA EMPIRE</span>
                 <span class="garis-loading"></span>
-                <span class="teks-loading">Setiap langkah, bermakna.</span>
+                <span class="teks-loading">Selamat datang ke CTA EMPIRE</span>
             </div>
         </div>
 
+        <!-- PAPARAN DUA ALIRAN: kandungan penuh diambil daripada halaman bidang. -->
+        <dialog class="dialog-aliran" id="dialog-aliran" aria-labelledby="tajuk-aliran">
+            <div class="bar-aliran">
+                <div>
+                    <span class="label-kecil">BIDANG PERKHIDMATAN</span>
+                    <h2 id="tajuk-aliran">CTA EMPIRE</h2>
+                </div>
+                <button type="button" class="tutup-aliran" aria-label="Tutup maklumat perkhidmatan">
+                    Tutup <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="kandungan-aliran" id="kandungan-aliran" tabindex="0"></div>
+        </dialog>
+
         <main id="kandungan">
-            <!-- HERO: dua kepakaran disatukan dalam satu identiti korporat. -->
-            <section class="hero-utama">
-                <div class="foto-hero" aria-hidden="true">
-                    <img
-                        src="assets/images/architecture.jpg"
-                        alt=""
-                        width="1632"
-                        height="1224"
-                        fetchpriority="high"
-                    />
-                </div>
-                <div class="grid-hero" aria-hidden="true"></div>
-
-                <div class="bekas isi-hero">
+            <!-- DUA ALIRAN: pautan asli masih boleh dibuka jika JavaScript tidak tersedia. -->
+            <section class="hero-utama" aria-labelledby="tajuk-utama">
+                <div class="bekas">
                     <div class="meta-hero">
-                        <span class="label-kecil">BERPAKSI PADA KEPERCAYAAN</span>
-                        <span class="label-kecil lokasi-hero">IPOH, PERAK · SEJAK 2024</span>
+                        <span class="label-kecil">CTA EMPIRE · IPOH, PERAK</span>
+                        <span class="nota-lokasi">Bersama membina kemajuan sejak 2024</span>
                     </div>
-
-                    <h1>Dua kepakaran.<br />Satu <em>visi.</em></h1>
-
-                    <div class="bawah-hero">
-                        <div>
+                    <div class="pengenalan-hero">
+                        <h1 id="tajuk-utama">Dua bidang.<br /><span>Satu komitmen.</span></h1>
+                        <div class="ringkasan-hero">
                             <p>
-                                Daripada kehadiran digital hingga persekitaran fizikal.<br />Kami
-                                menyokong kemajuan perniagaan anda.
+                                Penyelesaian digital dan penyelenggaraan yang menyokong keperluan
+                                perniagaan anda.
                             </p>
-                            <div class="kumpulan-butang">
-                                <a class="butang butang-emas" href="hubungi.html"
-                                    >Bincangkan keperluan anda</a
-                                >
-                                <a class="pautan-teks" href="#kepakaran">Kenali kepakaran kami</a>
+                            <a class="pautan-teks" href="tentang.html"
+                                >Kenali CTA EMPIRE <span aria-hidden="true">↗</span></a
+                            >
+                        </div>
+                    </div>
+
+                    <div class="kepala-aliran" id="kepakaran">
+                        <h2>Pilih bidang perkhidmatan</h2>
+                        <span>Terokai kepakaran kami</span>
+                    </div>
+                    <div class="dua-aliran">
+                        <a class="kad-aliran aliran-it" href="it.html" aria-label="Terokai IT">
+                            <div class="atas-aliran">
+                                <span class="tag-aliran">TEKNOLOGI MAKLUMAT</span><span>01</span>
                             </div>
-                        </div>
-                        <div class="cap-hero" aria-hidden="true">
-                            <span>IDEA</span>
-                            <span class="simbol-cap">✦</span>
-                            <span>MENJADI NYATA</span>
-                        </div>
-                    </div>
+                            <div class="isi-aliran">
+                                <div>
+                                    <h3>IT<span>.</span></h3>
+                                    <p>Kehadiran digital.<br />Identiti profesional.</p>
+                                </div>
+                                <svg
+                                    class="ilustrasi-aliran"
+                                    viewBox="0 0 210 160"
+                                    fill="none"
+                                    aria-hidden="true"
+                                >
+                                    <rect
+                                        x="20"
+                                        y="20"
+                                        width="160"
+                                        height="109"
+                                        rx="10"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                    />
+                                    <path
+                                        d="M20 44h160M35 32h2m8 0h2m8 0h2M81 145h39m-20-15v15"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                    />
+                                    <rect
+                                        x="38"
+                                        y="59"
+                                        width="56"
+                                        height="48"
+                                        rx="4"
+                                        fill="currentColor"
+                                        opacity=".14"
+                                    />
+                                    <path
+                                        d="m59 76-9 8 9 8m12-16 9 8-9 8m38-22h48m-48 13h35m-35 13h43"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                    />
+                                    <rect
+                                        x="155"
+                                        y="87"
+                                        width="38"
+                                        height="62"
+                                        rx="6"
+                                        fill="var(--biru)"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                    />
+                                    <path
+                                        d="M165 98h18m-17 36h16"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
+                            </div>
+                            <div class="senarai-ringkas">
+                                <span>Laman web korporat</span><span>Tempahan</span
+                                ><span>Landing page</span>
+                            </div>
+                            <div class="bawah-aliran">
+                                <span>Terokai perkhidmatan IT</span
+                                ><span class="anak-panah-aliran" aria-hidden="true">↗</span>
+                            </div>
+                        </a>
 
-                    <div class="pintu-kepakaran">
-                        <a href="it.html"
-                            ><span class="nombor">01 /</span
-                            ><span>CTA IT<small>Penyelesaian digital untuk perniagaan.</small></span
-                            ><span class="ikon-tambah" aria-hidden="true">+</span></a
+                        <a
+                            class="kad-aliran aliran-construction"
+                            href="construction.html"
+                            aria-label="Terokai Construction"
                         >
-                        <a href="construction.html"
-                            ><span class="nombor">02 /</span
-                            ><span
-                                >CTA CONSTRUCTION<small
-                                    >Penyelenggaraan kawasan secara teratur.</small
-                                ></span
-                            ><span class="ikon-tambah" aria-hidden="true">+</span></a
+                            <div class="atas-aliran">
+                                <span class="tag-aliran">PENYELENGGARAAN &amp; LANDSKAP</span
+                                ><span>02</span>
+                            </div>
+                            <div class="isi-aliran">
+                                <div>
+                                    <h3>Construction<span>.</span></h3>
+                                    <p>Pelaksanaan teratur.<br />Persekitaran terpelihara.</p>
+                                </div>
+                                <svg
+                                    class="ilustrasi-aliran"
+                                    viewBox="0 0 210 160"
+                                    fill="none"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        d="M45 145 90 20h30l45 125M105 29v15m0 16v20m0 19v29M18 145h178"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                    />
+                                    <path
+                                        d="M32 112V84m-15 0 15-42 15 42H17Zm153 29V68m-20 0 20-48 20 48h-40Z"
+                                        fill="currentColor"
+                                        fill-opacity=".1"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M63 131h16m52 0h17"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                    />
+                                </svg>
+                            </div>
+                            <div class="senarai-ringkas">
+                                <span>Jalan</span><span>Landskap</span><span>Rumput</span
+                                ><span>Longkang</span>
+                            </div>
+                            <div class="bawah-aliran">
+                                <span>Terokai perkhidmatan Construction</span
+                                ><span class="anak-panah-aliran" aria-hidden="true">↗</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="jalur-kepercayaan">
+                        <span><strong>SSM</strong> Perniagaan berdaftar</span>
+                        <span><strong>CIDB G3</strong> Berdasarkan profil syarikat</span>
+                        <a href="hubungi.html"
+                            >Bincangkan keperluan anda <span aria-hidden="true">↗</span></a
                         >
                     </div>
-                </div>
-
-                <div class="petunjuk-skrol" aria-hidden="true">
-                    <span></span>SKROL UNTUK MENGENALI KAMI
                 </div>
             </section>
 
@@ -175,102 +288,10 @@
                 </div>
             </section>
 
-            <!-- PEMILIH KEPAKARAN: kedua-dua pilihan boleh diteroka dengan klik. -->
-            <section class="seksyen seksyen-kepakaran" id="kepakaran">
-                <div class="bekas">
-                    <div class="kepala-seksyen muncul">
-                        <div>
-                            <p class="label-kecil">02 / DUA DUNIA. SATU KOMITMEN.</p>
-                            <h2>Ruang untuk<br /><em>bergerak maju.</em></h2>
-                        </div>
-                        <p>
-                            Keperluan pelanggan menjadi keutamaan<br />dalam setiap bidang
-                            perkhidmatan.
-                        </p>
-                    </div>
-                    <div
-                        class="pilihan-kepakaran muncul"
-                        role="tablist"
-                        aria-label="Pilih kepakaran"
-                    >
-                        <button
-                            id="tab-it"
-                            role="tab"
-                            aria-selected="true"
-                            aria-controls="panel-it"
-                            data-tab="it"
-                            type="button"
-                        >
-                            <span>01</span>Teknologi maklumat
-                        </button>
-                        <button
-                            id="tab-construction"
-                            role="tab"
-                            aria-selected="false"
-                            aria-controls="panel-construction"
-                            data-tab="construction"
-                            tabindex="-1"
-                            type="button"
-                        >
-                            <span>02</span>Construction
-                        </button>
-                    </div>
-                    <div
-                        class="panel-kepakaran"
-                        id="panel-it"
-                        role="tabpanel"
-                        aria-labelledby="tab-it"
-                        tabindex="0"
-                    >
-                        <div class="nombor-besar" aria-hidden="true">01</div>
-                        <div>
-                            <p class="label-kecil">CTA IT</p>
-                            <h3>Kehadiran digital.<br /><em>Identiti profesional.</em></h3>
-                            <p>
-                                Pembangunan laman web untuk memperkenalkan perniagaan, memudahkan
-                                tempahan dan menyediakan saluran pertanyaan pelanggan.
-                            </p>
-                            <a class="butang butang-garis" href="it.html">Terokai CTA IT</a>
-                        </div>
-                        <ul class="senarai-servis">
-                            <li>Laman web korporat</li>
-                            <li>Laman web tempahan</li>
-                            <li>Halaman promosi (landing page)</li>
-                        </ul>
-                    </div>
-                    <div
-                        class="panel-kepakaran"
-                        id="panel-construction"
-                        role="tabpanel"
-                        aria-labelledby="tab-construction"
-                        tabindex="0"
-                        hidden
-                    >
-                        <div class="nombor-besar" aria-hidden="true">02</div>
-                        <div>
-                            <p class="label-kecil">CTA CONSTRUCTION</p>
-                            <h3>Pelaksanaan teratur.<br /><em>Persekitaran terpelihara.</em></h3>
-                            <p>
-                                Penyelenggaraan jalan dan kawasan luar dengan perhatian pada
-                                kebersihan, keselamatan serta skop yang dipersetujui.
-                            </p>
-                            <a class="butang butang-garis" href="construction.html"
-                                >Terokai Construction</a
-                            >
-                        </div>
-                        <ul class="senarai-servis">
-                            <li>Penyelenggaraan jalan</li>
-                            <li>Landskap &amp; potong rumput</li>
-                            <li>Pembersihan longkang</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
             <!-- REKOD PROJEK: fakta daripada profil syarikat. -->
             <section class="seksyen bekas sorotan-projek">
                 <div class="muncul">
-                    <p class="label-kecil">03 / PENGALAMAN DI LAPANGAN</p>
+                    <p class="label-kecil">02 / PENGALAMAN DI LAPANGAN</p>
                     <h2>Pengalaman projek.<br /><em>Komitmen di lapangan.</em></h2>
                     <p>
                         Penglibatan sebagai subkontraktor bagi penyelenggaraan jalan Pihak Berkuasa
@@ -350,5 +371,6 @@
         <div class="kemajuan-bacaan" aria-hidden="true"></div>
         <script src="js/script.js" defer></script>
         <script src="js/interaksi.js" defer></script>
+        <script src="js/aliran.js" defer></script>
     </body>
 </html>

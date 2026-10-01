@@ -11,46 +11,73 @@ const menuMudahAlih = document.querySelector("#menu-mudah-alih");
 const butangMenu = document.querySelector(".butang-menu");
 
 /* 01. LOADING SCREEN DAN TRANSISI ANTARA HALAMAN
-   Loading pembukaan hanya dipaparkan sekali bagi setiap sesi tab.
+   Pembukaan sentiasa mempunyai loading; pertukaran halaman melalui logo.
+   Pemasa pembukaan dibatalkan apabila transisi baharu bermula.
    --------------------------------------------------------------------- */
 
-function bacaSesi(kunci) {
-    try {
-        return sessionStorage.getItem(kunci);
-    } catch {
-        return null;
-    }
-}
+let pemasaLoading;
+let sedangBerpindah = false;
+const kandunganAsas = document.querySelectorAll(
+    "#kandungan, .header-utama, .bar-telefon, .footer-utama",
+);
 
-function simpanSesi(kunci, nilai) {
-    try {
-        sessionStorage.setItem(kunci, nilai);
-    } catch {
-        // Website masih berfungsi jika storan pelayar tidak tersedia.
-    }
+function kunciKandungan(kunci) {
+    kandunganAsas.forEach(function (elemen) {
+        elemen.inert = kunci;
+    });
 }
 
 function tutupLoading() {
+    window.clearTimeout(pemasaLoading);
     lapisanTransisi.classList.remove("bergerak");
     lapisanTransisi.classList.add("selesai");
+    lapisanTransisi.setAttribute("aria-hidden", "true");
+    kunciKandungan(false);
 }
 
-const pernahDibuka = bacaSesi("cta-pernah-dibuka");
-const masaLoading = kurangGerakan.matches || pernahDibuka ? 80 : 1350;
+function mulaTransisi(teks) {
+    window.clearTimeout(pemasaLoading);
+    lapisanTransisi.querySelector(".teks-loading").textContent = teks;
+    lapisanTransisi.classList.remove("selesai");
+    lapisanTransisi.classList.add("dikawal", "bergerak");
+    lapisanTransisi.setAttribute("aria-hidden", "false");
+    kunciKandungan(true);
+}
 
-window.setTimeout(tutupLoading, masaLoading);
-simpanSesi("cta-pernah-dibuka", "ya");
+/* Storan hanya membezakan ketibaan transisi daripada pembukaan biasa.
+   Ia tidak lagi menyembunyikan loading pada lawatan seterusnya. */
+let tibaDaripadaTransisi = false;
+try {
+    const rekod = JSON.parse(sessionStorage.getItem("cta-destinasi") || "null");
+    tibaDaripadaTransisi = Boolean(
+        rekod && rekod.url === window.location.href && Date.now() - rekod.masa < 15000,
+    );
+    sessionStorage.removeItem("cta-destinasi");
+} catch {
+    // Jika storan disekat, loading biasa digunakan.
+}
 
-/* Pelayar mungkin memulihkan halaman lama apabila butang Back digunakan. */
+lapisanTransisi.classList.add("dikawal");
+lapisanTransisi.setAttribute("aria-hidden", "false");
+kunciKandungan(true);
+/* Kurang gerakan mematikan animasi CSS, bukan memendekkan paparan logo. */
+const masaLoading = tibaDaripadaTransisi ? 400 : 1800;
+pemasaLoading = window.setTimeout(tutupLoading, masaLoading);
+
 window.addEventListener("pageshow", function (event) {
     if (event.persisted) {
+        sedangBerpindah = false;
         tutupLoading();
     }
 });
 
+function namaHalaman(url) {
+    const nama = url.pathname.replace(/\/$/, "").split("/").pop() || "index";
+    return nama.replace(/\.html$/, "");
+}
+
 document.addEventListener("click", function (event) {
     const pautan = event.target.closest("a[href]");
-
     if (
         !pautan ||
         event.defaultPrevented ||
@@ -60,38 +87,52 @@ document.addEventListener("click", function (event) {
         event.shiftKey ||
         event.altKey ||
         pautan.target === "_blank" ||
-        pautan.hasAttribute("download")
-    ) {
+        pautan.hasAttribute("download") ||
+        pautan.hasAttribute("data-aliran")
+    )
         return;
-    }
 
     const destinasi = new URL(pautan.href, window.location.href);
-    const halamanSemasa = new URL(window.location.href);
+    const semasa = new URL(window.location.href);
+    const halamanDikenali = ["index", "tentang", "it", "construction", "projek", "hubungi"];
+    const halamanSama =
+        namaHalaman(destinasi) === namaHalaman(semasa) && destinasi.search === semasa.search;
 
-    /* Pautan luar, e-mel, WhatsApp dan pautan skrol kekal berfungsi asli. */
-    if (
-        destinasi.protocol !== halamanSemasa.protocol ||
-        destinasi.origin !== halamanSemasa.origin ||
-        !destinasi.pathname.endsWith(".html") ||
-        (destinasi.pathname === halamanSemasa.pathname && destinasi.search === halamanSemasa.search)
-    ) {
-        return;
+    /* Pautan ke sijil pada halaman semasa turut menutup pop-up dahulu. */
+    if (destinasi.origin === semasa.origin && halamanSama) {
+        const dialogSemasa = document.querySelector("#dialog-aliran");
+        if (dialogSemasa.open) dialogSemasa.close();
     }
+    if (
+        destinasi.protocol !== semasa.protocol ||
+        destinasi.origin !== semasa.origin ||
+        !halamanDikenali.includes(namaHalaman(destinasi)) ||
+        halamanSama
+    )
+        return;
 
     event.preventDefault();
+    if (sedangBerpindah) return;
+    sedangBerpindah = true;
     tutupMenu();
-
-    if (kurangGerakan.matches) {
-        window.location.assign(destinasi.href);
-        return;
-    }
-
-    lapisanTransisi.classList.remove("selesai");
-    lapisanTransisi.classList.add("bergerak");
+    const dialog = document.querySelector("#dialog-aliran");
+    if (dialog.open) dialog.close();
+    mulaTransisi("Membuka halaman seterusnya");
 
     window.setTimeout(function () {
+        try {
+            sessionStorage.setItem(
+                "cta-destinasi",
+                JSON.stringify({
+                    url: destinasi.href,
+                    masa: Date.now(),
+                }),
+            );
+        } catch {
+            // Navigasi masih diteruskan tanpa storan.
+        }
         window.location.assign(destinasi.href);
-    }, 520);
+    }, 1100);
 });
 
 /* 02. MENU TELEFON DAN TABLET
@@ -133,7 +174,7 @@ menuMudahAlih.addEventListener("click", function (event) {
 /* 03. PAUTAN HALAMAN SEMASA DAN TAHUN FOOTER
    --------------------------------------------------------------------- */
 
-const namaFail = window.location.pathname.split("/").pop() || "index.html";
+const namaFail = namaHalaman(new URL(window.location.href)) + ".html";
 
 document.querySelectorAll("nav a[href]").forEach(function (pautan) {
     if (pautan.getAttribute("href") === namaFail) {
@@ -195,40 +236,3 @@ window.addEventListener(
 );
 
 kemasKiniKemajuan();
-
-/* 05. TAB INTERAKTIF KEPAKARAN
-   Kekunci anak panah, Home dan End turut boleh menukar pilihan.
-   --------------------------------------------------------------------- */
-
-const tabKepakaran = Array.from(document.querySelectorAll("[data-tab]"));
-
-function pilihTab(tabDipilih) {
-    tabKepakaran.forEach(function (tab) {
-        const aktif = tab === tabDipilih;
-
-        tab.setAttribute("aria-selected", String(aktif));
-        tab.tabIndex = aktif ? 0 : -1;
-        document.getElementById(tab.getAttribute("aria-controls")).hidden = !aktif;
-    });
-}
-
-tabKepakaran.forEach(function (tab, indeks) {
-    tab.addEventListener("click", function () {
-        pilihTab(tab);
-    });
-
-    tab.addEventListener("keydown", function (event) {
-        let indeksBaharu = indeks;
-
-        if (event.key === "ArrowRight") indeksBaharu = (indeks + 1) % tabKepakaran.length;
-        else if (event.key === "ArrowLeft")
-            indeksBaharu = (indeks - 1 + tabKepakaran.length) % tabKepakaran.length;
-        else if (event.key === "Home") indeksBaharu = 0;
-        else if (event.key === "End") indeksBaharu = tabKepakaran.length - 1;
-        else return;
-
-        event.preventDefault();
-        pilihTab(tabKepakaran[indeksBaharu]);
-        tabKepakaran[indeksBaharu].focus();
-    });
-});

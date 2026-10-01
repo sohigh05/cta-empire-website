@@ -31,15 +31,18 @@ const cadanganWebsite = {
     },
 };
 
-document.querySelectorAll('input[name="matlamat"]').forEach(function (pilihan) {
-    pilihan.addEventListener("change", function () {
-        const cadangan = cadanganWebsite[pilihan.value];
+document.addEventListener("change", function (event) {
+    const pilihan = event.target;
+    if (!pilihan.matches('input[name$="matlamat"]')) return;
 
-        document.querySelector("#nama-cadangan").textContent = cadangan.nama;
-        document.querySelector("#teks-cadangan").textContent = cadangan.penerangan;
-        document.querySelector("#pautan-cadangan").href =
-            "hubungi.html?servis=" + encodeURIComponent(pilihan.value);
-    });
+    const ruang = pilihan.closest(".pemilih-website");
+    const cadangan = cadanganWebsite[pilihan.value];
+    if (!ruang || !cadangan) return;
+
+    ruang.querySelector('[id$="nama-cadangan"]').textContent = cadangan.nama;
+    ruang.querySelector('[id$="teks-cadangan"]').textContent = cadangan.penerangan;
+    ruang.querySelector('[id$="pautan-cadangan"]').href =
+        "hubungi.html?servis=" + encodeURIComponent(pilihan.value);
 });
 
 /* 02. BORANG PERTANYAAN WHATSAPP

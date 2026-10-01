@@ -19,7 +19,7 @@
     padding-block: 35px 85px;
     overflow: hidden;
     border-bottom: 1px solid var(--garis);
-    background: radial-gradient(ellipse at 95% 100%, #182c43, transparent 60%);
+    background: var(--latar-lembut);
 }
 
 .hero-dalaman::after {
@@ -44,7 +44,7 @@
     position: relative;
     z-index: 1;
     margin-block: 24px 30px;
-    font-size: clamp(3.8rem, 6.8vw, 6.8rem);
+    font-size: clamp(2.5rem, 4.5vw, 4.3rem);
     line-height: 0.99;
     letter-spacing: -0.035em;
     animation: masuk-tajuk 0.9s ease both;
@@ -60,7 +60,7 @@
 
 .latar-dalam {
     border-block: 1px solid var(--garis);
-    background: var(--navy-dalam);
+    background: var(--latar-lembut);
 }
 
 .sr-sahaja {
@@ -107,30 +107,6 @@
     gap: 90px;
 }
 
-.foto-cerita {
-    position: relative;
-    margin: 0;
-}
-
-.foto-cerita img {
-    width: 100%;
-    height: 610px;
-    object-fit: cover;
-    filter: saturate(0.45);
-}
-
-.foto-cerita figcaption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    padding: 25px;
-    color: var(--putih);
-    background: linear-gradient(transparent, rgba(7, 16, 28, 0.85));
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-}
-
 .ruang-foto {
     position: relative;
     display: flex;
@@ -141,7 +117,7 @@
     flex-direction: column;
     overflow: hidden;
     border: 1px solid var(--garis);
-    background: linear-gradient(140deg, #20344b, #0b1625);
+    background: var(--latar-lembut);
 }
 
 .ruang-foto::before,
@@ -169,10 +145,10 @@
 }
 
 .inisial-foto {
-    color: rgba(209, 173, 118, 0.75);
+    color: var(--biru);
     font-family: var(--fon-tajuk);
     font-size: 5rem;
-    font-style: italic;
+    font-style: normal;
     line-height: 1.1;
 }
 
@@ -193,7 +169,7 @@
 }
 
 .nama-pemilik {
-    font-size: clamp(2.5rem, 4.6vw, 4.8rem);
+    font-size: clamp(2rem, 3vw, 3rem);
 }
 
 .carta-organisasi {
@@ -208,7 +184,7 @@
     width: 100%;
     max-width: 390px;
     border: 1px solid var(--garis);
-    background: var(--navy-cerah);
+    background: var(--putih);
 }
 
 .kad-ahli .ruang-foto {
@@ -284,13 +260,13 @@
     padding: 0;
     overflow: hidden;
     border: 1px solid var(--garis);
-    background: var(--navy);
+    background: var(--kertas);
     text-align: left;
     transition: border-color 0.3s;
 }
 
 .kad-sijil:hover {
-    border-color: var(--emas);
+    border-color: var(--emas-teks);
 }
 
 .pratonton-sijil {
@@ -321,8 +297,8 @@
     right: 10px;
     bottom: 10px;
     padding: 7px 13px;
-    color: var(--putih);
-    background: var(--navy);
+    color: var(--teks);
+    background: var(--kertas);
     font-size: 0.875rem;
 }
 
@@ -332,7 +308,7 @@
 
 .butiran-sijil h3 {
     margin: 13px 0;
-    font-size: 1.9rem;
+    font-size: 1.45rem;
     line-height: 1.12;
 }
 
@@ -355,8 +331,8 @@
     padding: 0;
     overflow: hidden;
     border: 1px solid var(--garis);
-    color: var(--putih);
-    background: var(--navy-dalam);
+    color: var(--teks);
+    background: var(--latar-lembut);
 }
 
 .dialog-sijil[open] {
@@ -402,12 +378,12 @@
     min-height: 44px;
     padding: 8px 12px;
     border: 1px solid var(--garis);
-    background: var(--navy-cerah);
+    background: var(--putih);
     font-size: 0.875rem;
 }
 
 .kawalan-sijil button:hover {
-    border-color: var(--emas);
+    border-color: var(--emas-teks);
 }
 
 .kawalan-zum {
@@ -418,7 +394,7 @@
 
 .kawalan-zum output {
     min-width: 45px;
-    color: var(--emas);
+    color: var(--emas-teks);
     font-size: 0.875rem;
     text-align: center;
 }
@@ -428,7 +404,7 @@
     min-height: 0;
     overflow: auto;
     overscroll-behavior: contain;
-    background: #172130;
+    background: #dde4ec;
     user-select: none;
     -webkit-user-select: none;
     -webkit-touch-callout: none;
@@ -486,7 +462,7 @@
 }
 
 .kad-servis:hover {
-    background: var(--navy-cerah);
+    background: var(--putih);
 }
 
 .kad-servis > .label-kecil {
@@ -496,15 +472,15 @@
 .simbol-servis {
     display: block;
     margin-block: 27px;
-    color: var(--emas);
+    color: var(--emas-teks);
     font-family: var(--fon-tajuk);
     font-size: 3.5rem;
-    font-style: italic;
+    font-style: normal;
     line-height: 1;
 }
 
 .kad-servis h3 {
-    font-size: 2.8rem;
+    font-size: 1.75rem;
 }
 
 .kad-servis > p {
@@ -548,14 +524,14 @@
 }
 
 .pilihan-matlamat label:has(input:checked) {
-    border-color: var(--emas);
-    background: var(--navy-cerah);
+    border-color: var(--emas-teks);
+    background: var(--putih);
 }
 
 .pilihan-matlamat input {
     width: 18px;
     height: 18px;
-    accent-color: var(--emas);
+    accent-color: var(--emas-teks);
 }
 
 .hasil-cadangan {
@@ -583,13 +559,13 @@
 }
 
 .langkah-proses li > span {
-    color: var(--emas);
+    color: var(--emas-teks);
     font-size: 0.875rem;
 }
 
 .langkah-proses h3 {
     margin-block: 22px 15px;
-    font-size: 2rem;
+    font-size: 1.75rem;
 }
 
 .langkah-proses p {
@@ -632,8 +608,8 @@
     display: block;
     margin-top: 8px;
     font-family: var(--fon-tajuk);
-    font-size: 2rem;
-    font-weight: 400;
+    font-size: 1.75rem;
+    font-weight: 600;
 }
 
 .baris-kerja {
@@ -656,7 +632,7 @@
 .kad-prinsip {
     padding: 40px;
     border: 1px solid var(--garis);
-    background: var(--navy-cerah);
+    background: var(--putih);
 }
 
 .kad-prinsip ol {
@@ -672,7 +648,7 @@
 
 .kad-prinsip li span {
     margin-right: 18px;
-    color: var(--emas);
+    color: var(--emas-teks);
     font-size: 0.875rem;
 }
 
@@ -683,13 +659,13 @@
     margin-block: 55px;
     padding: 60px;
     border: 1px solid var(--garis);
-    background: radial-gradient(ellipse at 100% 0%, #293949, var(--navy-dalam) 75%);
+    background: var(--latar-lembut);
 }
 
 .angka-projek {
     display: block;
     margin-block: 24px;
-    color: var(--emas-cerah);
+    color: var(--biru);
     font-family: var(--fon-tajuk);
     font-size: clamp(6rem, 16vw, 14rem);
     line-height: 1;
@@ -749,7 +725,7 @@
 }
 
 .butiran-hubungi a:hover {
-    color: var(--emas);
+    color: var(--emas-teks);
 }
 
 .butiran-hubungi p {
@@ -758,14 +734,14 @@
 
 .nombor-hubungi {
     font-family: var(--fon-tajuk);
-    font-size: 2.7rem;
+    font-size: 1.75rem;
     line-height: 1.3;
 }
 
 .borang-hubungi {
     padding: 40px;
     border: 1px solid var(--garis);
-    background: var(--navy-cerah);
+    background: var(--putih);
 }
 
 .borang-hubungi h3 {
@@ -796,7 +772,7 @@
 }
 
 .medan label > span {
-    color: var(--emas);
+    color: var(--emas-teks);
 }
 
 .medan label > .pilihan {
@@ -811,9 +787,9 @@
     width: 100%;
     min-height: 52px;
     padding: 13px 15px;
-    border: 1px solid #536073;
-    color: var(--putih);
-    background: var(--navy);
+    border: 1px solid #9caabd;
+    color: var(--teks);
+    background: var(--kertas);
     font-size: 1rem;
 }
 
@@ -823,18 +799,18 @@
 
 .medan input::placeholder,
 .medan textarea::placeholder {
-    color: #919caa;
+    color: #667589;
     opacity: 1;
 }
 
 .medan select {
-    color-scheme: dark;
+    color-scheme: light;
 }
 
 .medan input:focus,
 .medan select:focus,
 .medan textarea:focus {
-    border-color: var(--emas);
+    border-color: var(--emas-teks);
 }
 
 .borang-hubungi > .butang {
@@ -855,7 +831,7 @@
 #pratonton-mesej {
     padding: 20px;
     border-left: 2px solid var(--emas);
-    background: var(--navy);
+    background: var(--kertas);
     font-size: 0.9375rem;
     overflow-wrap: anywhere;
     white-space: pre-wrap;
@@ -864,7 +840,7 @@
 .bingkai-peta {
     overflow: hidden;
     border: 1px solid var(--garis);
-    background: var(--navy-cerah);
+    background: var(--putih);
 }
 
 .bingkai-peta iframe {
@@ -934,10 +910,6 @@
         grid-template-columns: 1fr;
         gap: 0;
     }
-
-    .foto-cerita img {
-        height: 560px;
-    }
 }
 
 @media (max-width: 767px) {
@@ -950,7 +922,7 @@
     }
 
     .hero-dalaman h1 {
-        font-size: clamp(3rem, 10vw, 4.4rem);
+        font-size: clamp(2rem, 8vw, 3rem);
         line-height: 1.04;
         letter-spacing: -0.03em;
     }
@@ -973,16 +945,12 @@
         gap: 40px;
     }
 
-    .foto-cerita img {
-        height: 350px;
-    }
-
     .foto-pemilik {
         min-height: 360px;
     }
 
     .nama-pemilik {
-        font-size: 2.8rem;
+        font-size: 1.75rem;
     }
 
     .fakta-syarikat > div {
@@ -1024,7 +992,7 @@
     }
 
     .butiran-sijil h3 {
-        font-size: 1.55rem;
+        font-size: 1.2rem;
     }
 
     .label-besar {
@@ -1092,7 +1060,7 @@
     }
 
     .langkah-proses h3 {
-        font-size: 1.85rem;
+        font-size: 1.3rem;
     }
 
     .jalur-kelayakan {
