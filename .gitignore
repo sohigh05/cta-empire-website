@@ -3,3 +3,8 @@ node_modules/
 .env
 *.tar.gz
 qa/
+*.zip
+*.pdf
+tmp/
+.env.*
+!.env.example

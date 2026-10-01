@@ -3,16 +3,24 @@ CTA EMPIRE — PANDUAN FAIL WEBSITE
 
 1. MEMBUKA WEBSITE
 
+   Klik dua kali "Buka CTA EMPIRE.cmd" dalam folder projek cta-empire.
+
+   Website akan dibuka dalam pelayar laptop anda:
+   http://127.0.0.1:4173/
+
+   Pelayan berjalan secara tersembunyi dan hanya boleh diakses daripada
+   laptop ini. Selepas laptop dimulakan semula, klik fail pembuka itu lagi.
+   Klik berulang menggunakan pelayan yang sama.
+
    Semua halaman menggunakan HTML, CSS dan JavaScript biasa.
-   Gunakan pelayan tempatan atau hosting untuk mengaktifkan pop-up
-   IT dan Construction. Jika index.html dibuka terus sebagai fail,
+   Pembuka tempatan mengaktifkan pop-up IT dan Construction.
+   Jika index.html dibuka terus sebagai fail,
    pautan bidang membuka halaman penuh sebagai paparan sandaran.
    Sambungan internet diperlukan untuk fon Google, peta dan WhatsApp.
 
-   Untuk pratonton melalui pelayan tempatan, jalankan dari folder ini:
-   python -m http.server 4173 --directory dist
-
-   Kemudian buka http://localhost:4173
+   Website dijalankan secara tempatan. Kod dan gambar turut disimpan
+   dalam repositori GitHub Public atas permintaan pengguna.
+   Hosting automatik dan pakej ZIP tidak diperlukan.
 
 
 2. SUSUNAN FAIL
